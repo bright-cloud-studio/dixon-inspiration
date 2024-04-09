@@ -6,10 +6,32 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{teaser_leg
 /* Add new field */
 $GLOBALS['TL_DCA']['tl_news']['fields']['testy'] = array
 (
-  'label'                   => &$GLOBALS['TL_LANG']['tl_news']['testy'],
-  'inputType'               => 'text',
-  'default'                 => '',
-  'search'                  => true,
-  'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
-  'sql'                     => "varchar(255) NOT NULL default ''"
+    'label'     => &$GLOBALS['TL_LANG']['tl_news']['inspiration_steps'],
+        'exclude'   => true,
+        'inputType' => 'multiColumnWizard',
+        'eval'      => [
+            'columnFields' => [
+                'insp_headline' => [
+                    'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_headline'],
+                    'exclude'   => true,
+                    'inputType' => 'text',
+                ],
+                'insp_text' => [
+                    'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_text'],
+                    'exclude'   => true,
+                    'inputType' => 'text',
+                ],
+                'insp_image' => [
+                    'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_image'],
+                    'exclude'   => true,
+                    'inputType' => 'text',
+                ],
+                'insp_video' => [
+                    'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_video'],
+                    'exclude'   => true,
+                    'inputType' => 'text',
+                ],
+            ],
+        ],
+        'sql'       => 'blob NULL',
 );
