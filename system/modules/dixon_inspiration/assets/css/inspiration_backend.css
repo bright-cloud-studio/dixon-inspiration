@@ -2,7 +2,7 @@ table.multicolumnwizard {
   max-width: 100%;
 }
 
-.mcwUpdateFields input::last-of-type {
-    padding-bottom: 30px;
+.tl_modulewizard td.mcwUpdateFields input {
     margin-bottom: 30px;
+    padding-bottom: 30px;
 }
