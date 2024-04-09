@@ -19,7 +19,8 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['inspiration_steps'] = array
                 'insp_text' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_text'],
                     'exclude'   => true,
-                    'inputType' => 'text',
+                    'inputType' => 'textarea',
+                    'eval'      => array('tl_class'=>'clr', 'rte'=>'tinyMCE'),
                 ],
                 'insp_image' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_image'],
