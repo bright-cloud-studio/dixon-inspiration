@@ -1,7 +1,7 @@
 <?php
 
 /* Extend the tl_news palettes */
-$GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{teaser_legend}', ';{add_news_fields_legend},news_issue;{teaser_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{teaser_legend}', ';{inspiration_legend},testy;{teaser_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 
 /* Add new field */
 $GLOBALS['TL_DCA']['tl_news']['fields']['testy'] = array
