@@ -18,9 +18,8 @@
         "source": "https://github.com/bright-cloud-studio/dixon-inspiration"
     },
     "require":{
-        "php": "^7.4 || ^8.0",
-        "contao/core-bundle": "^4.13",
-        "menatwork/contao-multicolumnwizard-bundle": "^3.6.4"
+        "php": "^7.3 || ^8.0",
+        "contao/core-bundle": "^4.9"
     },
     "extra":{
         "contao-manager-plugin": "Bcs\\InspirationBundle\\ContaoManager\\Plugin"
