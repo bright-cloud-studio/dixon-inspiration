@@ -18,7 +18,7 @@
         "source": "https://github.com/bright-cloud-studio/dixon-inspiration"
     },
     "require":{
-        "php": "^7.3 || ^8.0",
+        "php": "^7.3 || ^8.1",
         "contao/core-bundle": "^4.13",
         "contao/news-bundle": "^4.13"
     },
