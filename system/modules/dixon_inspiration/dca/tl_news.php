@@ -15,13 +15,13 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['inspiration_steps'] = array
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_headline'],
                     'exclude'   => true,
                     'inputType' => 'text',
-                    'eval'      => [ 'style' => 'width:100%' ],
+                    'eval'      => [ 'style' => 'width:100%', 'columnPos' => 'group_1' ],
                 ],
                 'insp_text' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_text'],
                     'exclude'   => true,
                     'inputType' => 'textarea',
-                    'eval'      => array('tl_class'=>'clr', 'rte'=>'tinyMCE', 'style' => 'width:100%'),
+                    'eval'      => array('tl_class'=>'clr', 'rte'=>'tinyMCE', 'style' => 'width:100%', 'columnPos' => 'group_1'),
                 ],
                 'insp_image' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_image'],
