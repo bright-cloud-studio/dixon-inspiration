@@ -3,6 +3,5 @@ table.multicolumnwizard {
 }
 
 .tl_modulewizard td.mcwUpdateFields input:last-of-type {
-    margin-bottom: 90px;
-    padding-bottom: 90px;
+    margin-bottom: 60px;
 }
