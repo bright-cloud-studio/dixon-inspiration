@@ -4,7 +4,7 @@
 $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{teaser_legend}', ';{inspiration_legend},testy;{teaser_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 
 /* Add new field */
-$GLOBALS['TL_DCA']['tl_news']['fields']['testy'] = array
+$GLOBALS['TL_DCA']['tl_news']['fields']['inspiration_steps'] = array
 (
     'label'     => &$GLOBALS['TL_LANG']['tl_news']['inspiration_steps'],
         'exclude'   => true,
