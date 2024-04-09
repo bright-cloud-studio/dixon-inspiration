@@ -20,7 +20,7 @@
     "require":{
         "php": "^7.3 || ^8.0",
         "contao/core-bundle": "^4.13",
-        "contao/news-bundle": "^4.13",
+        "contao/news-bundle": "^4.13"
     },
     "extra":{
         "contao-manager-plugin": "Bcs\\InspirationBundle\\ContaoManager\\Plugin"
