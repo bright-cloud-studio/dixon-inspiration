@@ -12,12 +12,3 @@
 
 
 // Fields
-$GLOBALS['TL_DCA']['tl_news']['fields'] += [
-    'testy' => [
-        'label' => &$GLOBALS['TL_LANG']['tl_news']['testy'],
-        'exclude' => true,
-        'inputType' => 'text',
-        'eval' => ['tl_class' => 'w50', 'required' => true, 'rgxp' => 'recaptcha'],
-        'sql' => "varchar(120) NOT NULL default ''",
-    ],
-];
