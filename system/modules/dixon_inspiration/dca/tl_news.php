@@ -27,11 +27,13 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['inspiration_steps'] = array
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_image'],
                     'exclude'   => true,
                     'inputType' => 'text',
+                    'eval'      => [ 'style' => 'width:100%', 'columnPos' => 'group_1' ],
                 ],
                 'insp_video' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['insp_video'],
                     'exclude'   => true,
                     'inputType' => 'text',
+                    'eval'      => [ 'style' => 'width:100%', 'columnPos' => 'group_1' ],
                 ],
             ],
         ],
