@@ -1,5 +1,10 @@
 <?php
 
+
+$GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'] => ['post_type'];
+$GLOBALS['TL_DCA']['tl_news']['palettes']['inspiration'] = '{inspiration_legend},inspiration_steps;';
+
+
 /* Extend the tl_news palettes */
 $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace('{title_legend}', ';{post_type_legend},post_type;{title_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{teaser_legend}', ';{inspiration_legend},inspiration_steps;{teaser_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
