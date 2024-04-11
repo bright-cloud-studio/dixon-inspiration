@@ -2,7 +2,7 @@
 
 
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'post_type';
-$GLOBALS['TL_DCA']['tl_news']['palettes']['inspiration'] = '';
+$GLOBALS['TL_DCA']['tl_news']['palettes']['inspiration'] = str_replace('{title_legend}', ';{post_type_legend},post_type;{title_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 
 
 /* Extend the tl_news palettes */
