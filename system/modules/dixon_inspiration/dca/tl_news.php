@@ -1,7 +1,7 @@
 <?php
 
 
-$GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'] = 'post_type';
+$GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'post_type';
 $GLOBALS['TL_DCA']['tl_news']['palettes']['inspiration'] = '{inspiration_legend},inspiration_steps;';
 
 
