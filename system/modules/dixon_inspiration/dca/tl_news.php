@@ -49,5 +49,5 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['post_type'] = array
     'inputType'    => 'select',
     'options'      => array('news' => 'News', 'inspiration' => 'Inspiration'),
     'eval'         => array('mandatory'=>true, 'tl_class'=>'w50'),
-    'sql'          => "varchar(32) NOT NULL default 'yes'"
+    'sql'          => "varchar(32) NOT NULL default 'news'"
 );
