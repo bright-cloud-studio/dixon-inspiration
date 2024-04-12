@@ -2,6 +2,7 @@
 
 /* Legends */
 $GLOBALS['TL_LANG']['tl_news']['inspiration_legend'] = 'Inspiration Settings';
+$GLOBALS['TL_LANG']['tl_news']['post_type_legend'] = 'News Post Type Settings';
 
 /* Fields */
 $GLOBALS['TL_LANG']['tl_news']['inspiration_steps']   = array('Step Details', 'Fill in the headline, text, image and video to be used for this Step on the frontend.');
