@@ -3,7 +3,7 @@
 
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'post_type';
 
-$default = $GLOBALS['TL_DCA']['tl_news']['palettes']['default']
+$default = $GLOBALS['TL_DCA']['tl_news']['palettes']['default'];
 
 $default = str_replace('{title_legend}', ';{post_type_legend},post_type;{title_legend}', $default);
 $default = str_replace(';{teaser_legend}', ';{inspiration_legend},inspiration_steps;{teaser_legend}', $default);
