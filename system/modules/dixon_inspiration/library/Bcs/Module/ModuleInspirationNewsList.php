@@ -29,6 +29,7 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	 * @var string
 	 */
 	protected $strTemplate = 'mod_newslist';
+    protected $news_template = 'news_broken';
 
 	/**
 	 * Display a wildcard in the back end
