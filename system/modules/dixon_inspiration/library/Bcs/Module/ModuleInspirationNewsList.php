@@ -8,7 +8,7 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace Contao;
+namespace Bcs\Module;
 
 use Contao\CoreBundle\Exception\PageNotFoundException;
 use Contao\Model\Collection;
