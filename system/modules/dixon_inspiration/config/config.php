@@ -7,4 +7,4 @@ if (TL_MODE == 'BE')
 }
 
 /* Create our new frontend module */
-$GLOBALS['FE_MOD']['inspiration']['mod_inspiration_newslist'] = 'Bcs\Module\ModuleInspirationNewsList';
+$GLOBALS['FE_MOD']['bcs']['mod_inspiration_newslist'] = 'Bcs\Module\ModuleInspirationNewsList';
