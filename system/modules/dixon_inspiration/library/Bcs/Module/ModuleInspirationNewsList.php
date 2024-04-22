@@ -256,4 +256,4 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	}
 }
 
-class_alias(ModuleNewsList::class, 'ModuleNewsList');
+class_alias(ModuleInspirationNewsList::class, 'ModuleInspirationNewsList');
