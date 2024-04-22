@@ -1,21 +1,23 @@
 <?php
 
-
+/* Assign our custom 'post_type' field as a palette switcher */
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'post_type';
 
+/* Save the default palette's value in a php variable */
 $default = $GLOBALS['TL_DCA']['tl_news']['palettes']['default'];
 
+/* Inject our custom legend and fields into the saved palette */
 $default = str_replace('{title_legend}', ';{post_type_legend},post_type;{title_legend}', $default);
 $default = str_replace(';{teaser_legend}', ';{inspiration_legend},inspiration_steps;{teaser_legend}', $default);
-$GLOBALS['TL_DCA']['tl_news']['palettes']['inspiration'] = $default;
 
+/* Assign our modified palette as the new default palette */
+$GLOBALS['TL_DCA']['tl_news']['palettes']['inspiration'] = $default;
 
 /* Extend the tl_news palettes */
 $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace('{title_legend}', ';{post_type_legend},post_type;{title_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 //$GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{teaser_legend}', ';{inspiration_legend},inspiration_steps;{teaser_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 
-
-/* Add new field */
+/* Declare new fields */
 $GLOBALS['TL_DCA']['tl_news']['fields']['inspiration_steps'] = array
 (
     'label'     => &$GLOBALS['TL_LANG']['tl_news']['inspiration_steps'],
