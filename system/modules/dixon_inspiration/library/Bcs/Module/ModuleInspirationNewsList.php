@@ -255,5 +255,3 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 		return NewsModel::findPublishedByPids($newsArchives, $blnFeatured, $limit, $offset, array('order'=>$order));
 	}
 }
-
-class_alias(ModuleInspirationNewsList::class, 'ModuleInspirationNewsList');
