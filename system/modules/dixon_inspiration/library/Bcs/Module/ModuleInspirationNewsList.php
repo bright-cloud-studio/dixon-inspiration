@@ -29,7 +29,6 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	 * @var string
 	 */
 	protected $strTemplate = 'mod_newslist';
-    protected $news_template = 'news_broken';
 
 	/**
 	 * Display a wildcard in the back end
@@ -46,7 +45,7 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	 */
 	protected function compile()
 	{
-        $this->news_template = "news_type_inspiration";
+        $this->Template->news_template = "test";
 		parent::construct();
 	}
 
