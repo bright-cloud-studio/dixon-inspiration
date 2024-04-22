@@ -45,6 +45,11 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	 */
 	protected function compile()
 	{
+        echo "<pre>";
+        print_r($this);
+        echo "</pre>";
+        die();
+        
         $this->Template->news_template = "test";
 		parent::construct();
 	}
