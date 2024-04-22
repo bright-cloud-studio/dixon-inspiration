@@ -45,8 +45,8 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	 */
 	protected function compile()
 	{
-        &$this->news_template = "news_type_inspiration";
-		parent::__construct();
+        $this->news_template = "news_type_inspiration";
+		parent::construct();
 	}
 
 }
