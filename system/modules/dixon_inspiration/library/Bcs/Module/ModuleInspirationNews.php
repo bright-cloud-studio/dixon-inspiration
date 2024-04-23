@@ -10,8 +10,9 @@
 
 namespace Bcs\Module;
 
-use Contao\CoreBundle\Security\ContaoCorePermissions;
-use Contao\Model\Collection;
+use Contao\BackendTemplate;
+use Contao\ContentElement;
+use Contao\NewsModel;
 
 /**
  * Parent class for news modules.
@@ -19,9 +20,12 @@ use Contao\Model\Collection;
  * @property string $news_template
  * @property mixed  $news_metaFields
  */
-abstract class ModuleInspirationNews extends \ModuleNews
+class ModuleInspirationNews extends \ModuleNews
 {
-	
+	protected function compile()
+	{
+		parent::construct();
+	}
 
 	/**
 	 * Parse an item and return it as string
