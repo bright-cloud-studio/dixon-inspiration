@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Exception\ExceptionInterface;
  * @property string $news_template
  * @property mixed  $news_metaFields
  */
-abstract class ModuleInspirationNews extends \Module
+class ModuleInspirationNews extends \Module
 {
 
     protected function __compile($objModule)
