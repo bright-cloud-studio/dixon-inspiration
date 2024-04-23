@@ -51,7 +51,7 @@ class ModuleInspirationNewsList extends ModuleInspirationNews
 	/**
 	 * Generate the module
 	 */
-	protected function __compile($objModule)
+	protected function __compile()
 	{
 		parent::compile();
 	}
