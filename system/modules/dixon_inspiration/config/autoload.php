@@ -14,5 +14,6 @@
 // Register Classes
 ClassLoader::addClasses(array
 (
-    'Bcs\Module\ModuleInspirationNewsList'         => 'system/modules/dixon_inspiration/library/Bcs/Module/ModuleInspirationNewsList.php'
+    'Bcs\Module\ModuleInspirationNewsList'         => 'system/modules/dixon_inspiration/library/Bcs/Module/ModuleInspirationNewsList.php',
+    'Bcs\Module\ModuleInspirationNews'         => 'system/modules/dixon_inspiration/library/Bcs/Module/ModuleInspirationNews.php'
 ));
