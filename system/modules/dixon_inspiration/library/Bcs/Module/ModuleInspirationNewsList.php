@@ -30,6 +30,13 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	 */
 	protected $strTemplate = 'mod_newslist';
 
+
+    public function __construct($objModule)
+    {
+        $objModule->news_template = "testy";
+    }
+
+    
 	/**
 	 * Display a wildcard in the back end
 	 *
