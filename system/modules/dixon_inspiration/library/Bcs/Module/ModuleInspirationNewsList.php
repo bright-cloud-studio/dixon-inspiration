@@ -34,6 +34,9 @@ class ModuleInspirationNewsList extends \ModuleNewsList
     public function __construct($objModule)
     {
         $objModule->news_template = "testy";
+
+        echo "Test";
+        die();
     }
 
     
