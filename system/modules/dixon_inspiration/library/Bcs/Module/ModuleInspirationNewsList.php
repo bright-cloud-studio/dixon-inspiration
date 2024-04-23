@@ -32,9 +32,9 @@ class ModuleInspirationNewsList extends ModuleInspirationNews
 	protected $strTemplate = 'mod_newslist';
 
 
-    public function __construct($objModule)
+    public function __construct($objArticle, $element, $blnAddArchive=false)
     {
-        parent::__construct();
+        parent::__construct($objArticle, $element, $blnAddArchive=false);
     }
 
     
