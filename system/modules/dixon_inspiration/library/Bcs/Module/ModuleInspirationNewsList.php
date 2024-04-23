@@ -34,12 +34,7 @@ class ModuleInspirationNewsList extends ModuleInspirationNews
 
     public function __construct($objModule)
     {
-        $objModule->news_template = "testy";
-
-        echo "<pre>";
-        print_r($objModule);
-        echo "</pre>";
-        die();
+        parent::construct();
     }
 
     
@@ -58,14 +53,7 @@ class ModuleInspirationNewsList extends ModuleInspirationNews
 	 */
 	protected function __compile($objModule)
 	{
-         $objModule->news_template = "testy";
-        
-        echo "<pre>";
-        print_r($objModule);
-        echo "</pre>";
-        die();
-        
-		parent::construct();
+		parent::compile();
 	}
 
 }
