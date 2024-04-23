@@ -22,9 +22,9 @@ use Contao\NewsModel;
  */
 class ModuleInspirationNews extends \ModuleNews
 {
-	protected function compile()
+	protected function __compile()
 	{
-		parent::construct();
+		parent::__compile();
 	}
 
 	/**
