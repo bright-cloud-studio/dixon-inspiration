@@ -10,6 +10,7 @@
 
 namespace Bcs\Module;
 
+use Bcs\Module\ModuleInspirationNews;
 use Contao\CoreBundle\Exception\PageNotFoundException;
 use Contao\Model\Collection;
 
