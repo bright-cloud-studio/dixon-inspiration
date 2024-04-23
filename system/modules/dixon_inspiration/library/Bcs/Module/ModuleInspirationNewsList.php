@@ -55,8 +55,15 @@ class ModuleInspirationNewsList extends \ModuleNewsList
 	/**
 	 * Generate the module
 	 */
-	protected function compile()
+	protected function __compile($objModule)
 	{
+         $objModule->news_template = "testy";
+        
+        echo "<pre>";
+        print_r($objModule);
+        echo "</pre>";
+        die();
+        
 		parent::construct();
 	}
 
