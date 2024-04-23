@@ -23,7 +23,7 @@ use Isotope\Module\ModuleNewsList;
  * @property string $news_featured
  * @property string $news_order
  */
-class ModuleInspirationNewsList extends \ModuleInspirationNews
+class ModuleInspirationNewsList extends ModuleInspirationNews
 {
 	/**
 	 * Template
