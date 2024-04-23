@@ -24,7 +24,7 @@ class ModuleInspirationNews extends \ModuleNews
 {
 	protected function compile()
 	{
-		parent::__compile();
+        
 	}
 
 	/**
