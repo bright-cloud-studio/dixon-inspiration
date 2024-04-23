@@ -34,7 +34,7 @@ class ModuleInspirationNewsList extends ModuleInspirationNews
 
     public function __construct($objModule)
     {
-        parent::construct();
+        parent::__construct();
     }
 
     
