@@ -39,6 +39,10 @@ class ModuleInspirationNews extends \ModuleNews
 	 */
 	protected function parseArticle($objArticle, $blnAddArchive=false, $strClass='', $intCount=0)
 	{
+
+        echo "bing...bing....BLAM";
+        die();
+        
 		$objTemplate = new FrontendTemplate($this->news_template ?: 'news_latest');
 		$objTemplate->setData($objArticle->row());
 
