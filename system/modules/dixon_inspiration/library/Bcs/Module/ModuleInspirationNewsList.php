@@ -35,7 +35,9 @@ class ModuleInspirationNewsList extends \ModuleNewsList
     {
         $objModule->news_template = "testy";
 
-        echo "Test";
+        echo "<pre>";
+        print_r($objModule);
+        echo "</pre>";
         die();
     }
 
