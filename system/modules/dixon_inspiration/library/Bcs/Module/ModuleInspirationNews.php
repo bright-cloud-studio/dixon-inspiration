@@ -22,7 +22,7 @@ use Contao\NewsModel;
  */
 class ModuleInspirationNews extends \ModuleNews
 {
-	protected function compile()
+	protected function compile($objModule)
 	{
         
 	}
