@@ -15,7 +15,19 @@ use Symfony\Component\Routing\Exception\ExceptionInterface;
 abstract class ModuleInspirationNews extends \Module
 {
 
-  protected function parseArticle($objArticle, $blnAddArchive=false, $strClass='', $intCount=0)
+    protected function __compile($objModule)
+	{
+         $objModule->news_template = "testy";
+        
+        echo "<pre>";
+        print_r($objModule);
+        echo "</pre>";
+        die();
+        
+		parent::construct();
+	}
+
+    protected function parseArticle($objArticle, $blnAddArchive=false, $strClass='', $intCount=0)
 	{
     echo "blam!";
     die();
