@@ -27,6 +27,44 @@ class ModuleInspirationNews extends \ModuleNews
         
 	}
 
+
+
+
+
+    protected function parseArticles($objArticles, $blnAddArchive=false)
+	{
+		$limit = $objArticles->count();
+
+		if ($limit < 1)
+		{
+			return array();
+		}
+
+		$count = 0;
+		$arrArticles = array();
+		$uuids = array();
+
+		foreach ($objArticles as $objArticle)
+		{
+			if ($objArticle->addImage && $objArticle->singleSRC)
+			{
+				$uuids[] = $objArticle->singleSRC;
+			}
+		}
+
+		// Preload all images in one query, so they are loaded into the model registry
+		FilesModel::findMultipleByUuids($uuids);
+
+		foreach ($objArticles as $objArticle)
+		{
+			$arrArticles[] = parseArticle($objArticle, $blnAddArchive, '', ++$count);
+		}
+
+		return $arrArticles;
+	}
+
+
+    
 	/**
 	 * Parse an item and return it as string
 	 *
