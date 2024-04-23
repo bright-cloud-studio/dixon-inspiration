@@ -1,10 +1,17 @@
 <?php
 
+/*
+ * This file is part of Contao.
+ *
+ * (c) Leo Feyer
+ *
+ * @license LGPL-3.0-or-later
+ */
+
 namespace Bcs\Module;
 
 use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Contao\Model\Collection;
-use Symfony\Component\Routing\Exception\ExceptionInterface;
 
 /**
  * Parent class for news modules.
@@ -12,27 +19,22 @@ use Symfony\Component\Routing\Exception\ExceptionInterface;
  * @property string $news_template
  * @property mixed  $news_metaFields
  */
-class ModuleInspirationNews extends \ModuleNews
+abstract class ModuleInspirationNews extends \ModuleNews
 {
+	
 
-    protected function __compile($objModule)
+	/**
+	 * Parse an item and return it as string
+	 *
+	 * @param NewsModel $objArticle
+	 * @param boolean   $blnAddArchive
+	 * @param string    $strClass
+	 * @param integer   $intCount
+	 *
+	 * @return string
+	 */
+	protected function parseArticle($objArticle, $blnAddArchive=false, $strClass='', $intCount=0)
 	{
-         $objModule->news_template = "testy";
-        
-        echo "<pre>";
-        print_r($objModule);
-        echo "</pre>";
-        die();
-        
-		parent::construct();
-	}
-
-    protected function parseArticle($objArticle, $blnAddArchive=false, $strClass='', $intCount=0)
-	{
-    echo "blam!";
-    die();
-
-    
 		$objTemplate = new FrontendTemplate($this->news_template ?: 'news_latest');
 		$objTemplate->setData($objArticle->row());
 
@@ -46,26 +48,19 @@ class ModuleInspirationNews extends \ModuleNews
 			$strClass = ' featured' . $strClass;
 		}
 
-		$url = $this->generateContentUrl($objArticle, $blnAddArchive);
-
 		$objTemplate->class = $strClass;
 		$objTemplate->newsHeadline = $objArticle->headline;
 		$objTemplate->subHeadline = $objArticle->subheadline;
 		$objTemplate->hasSubHeadline = $objArticle->subheadline ? true : false;
-		$objTemplate->linkHeadline = $objArticle->headline;
-		$objTemplate->archive = NewsArchiveModel::findById($objArticle->pid);
+		$objTemplate->linkHeadline = $this->generateLink($objArticle->headline, $objArticle, $blnAddArchive);
+		$objTemplate->more = $this->generateLink($GLOBALS['TL_LANG']['MSC']['more'], $objArticle, $blnAddArchive, true);
+		$objTemplate->link = News::generateNewsUrl($objArticle, $blnAddArchive);
+		$objTemplate->archive = $objArticle->getRelated('pid');
 		$objTemplate->count = $intCount; // see #5708
 		$objTemplate->text = '';
+		$objTemplate->hasText = false;
 		$objTemplate->hasTeaser = false;
 		$objTemplate->hasReader = true;
-		$objTemplate->author = null; // see #6827
-
-		if (null !== $url)
-		{
-			$objTemplate->linkHeadline = $this->generateLink($objArticle->headline, $objArticle, $blnAddArchive);
-			$objTemplate->more = $this->generateLink($objArticle->linkText ?: $GLOBALS['TL_LANG']['MSC']['more'], $objArticle, $blnAddArchive, true);
-			$objTemplate->link = $url;
-		}
 
 		// Clean the RTE output
 		if ($objArticle->teaser)
@@ -79,7 +74,7 @@ class ModuleInspirationNews extends \ModuleNews
 		if ($objArticle->source != 'default')
 		{
 			$objTemplate->text = true;
-			$objTemplate->hasText = null !== $url;
+			$objTemplate->hasText = true;
 			$objTemplate->hasReader = false;
 		}
 
@@ -88,7 +83,8 @@ class ModuleInspirationNews extends \ModuleNews
 		{
 			$id = $objArticle->id;
 
-			$objTemplate->text = function () use ($id) {
+			$objTemplate->text = function () use ($id)
+			{
 				$strText = '';
 				$objElement = ContentModel::findPublishedByPidAndTable($id, 'tl_news');
 
@@ -103,31 +99,22 @@ class ModuleInspirationNews extends \ModuleNews
 				return $strText;
 			};
 
-			$objTemplate->hasText = null === $url ? false : static function () use ($objArticle) {
+			$objTemplate->hasText = static function () use ($objArticle)
+			{
 				return ContentModel::countPublishedByPidAndTable($objArticle->id, 'tl_news') > 0;
 			};
 		}
 
-		global $objPage;
-
-		$objTemplate->date = Date::parse($objPage->datimFormat, $objArticle->date);
-
-		if ($objAuthor = UserModel::findById($objArticle->author))
-		{
-			$objTemplate->author = $GLOBALS['TL_LANG']['MSC']['by'] . ' ' . $objAuthor->name;
-			$objTemplate->authorModel = $objAuthor;
-		}
-
-		if (!$objArticle->noComments && $objArticle->source == 'default' && isset(System::getContainer()->getParameter('kernel.bundles')['ContaoCommentsBundle']))
-		{
-			$intTotal = CommentsModel::countPublishedBySourceAndParent('tl_news', $objArticle->id);
-
-			$objTemplate->numberOfComments = $intTotal;
-			$objTemplate->commentCount = sprintf($GLOBALS['TL_LANG']['MSC']['commentCount'], $intTotal);
-		}
+		$arrMeta = $this->getMetaFields($objArticle);
 
 		// Add the meta information
+		$objTemplate->date = $arrMeta['date'] ?? null;
+		$objTemplate->hasMetaFields = !empty($arrMeta);
+		$objTemplate->numberOfComments = $arrMeta['ccount'] ?? null;
+		$objTemplate->commentCount = $arrMeta['comments'] ?? null;
 		$objTemplate->timestamp = $objArticle->date;
+		$objTemplate->author = $arrMeta['author'] ?? null;
+		$objTemplate->authorModel = $arrMeta['authorModel'] ?? null;
 		$objTemplate->datetime = date('Y-m-d\TH:i:sP', $objArticle->date);
 		$objTemplate->addImage = false;
 		$objTemplate->addBefore = false;
@@ -154,7 +141,7 @@ class ModuleInspirationNews extends \ModuleNews
 				->from($objArticle->singleSRC)
 				->setSize($imgSize)
 				->setOverwriteMetadata($objArticle->getOverwriteMetadata())
-				->enableLightbox($objArticle->fullsize);
+				->enableLightbox((bool) $objArticle->fullsize);
 
 			// If the external link is opened in a new window, open the image link in a new window as well (see #210)
 			if ('external' === $objTemplate->source && $objTemplate->target)
@@ -177,7 +164,7 @@ class ModuleInspirationNews extends \ModuleNews
 						->build();
 				}
 
-				$figure->applyLegacyTemplateData($objTemplate, null, $objArticle->floating);
+				$figure->applyLegacyTemplateData($objTemplate, $objArticle->imagemargin, $objArticle->floating);
 			}
 		}
 
@@ -194,7 +181,8 @@ class ModuleInspirationNews extends \ModuleNews
 		{
 			foreach ($GLOBALS['TL_HOOKS']['parseArticles'] as $callback)
 			{
-				System::importStatic($callback[0])->{$callback[1]}($objTemplate, $objArticle->row(), $this);
+				$this->import($callback[0]);
+				$this->{$callback[0]}->{$callback[1]}($objTemplate, $objArticle->row(), $this);
 			}
 		}
 
@@ -206,7 +194,8 @@ class ModuleInspirationNews extends \ModuleNews
 		}
 
 		// schema.org information
-		$objTemplate->getSchemaOrgData = static function () use ($objArticle, $objTemplate): array {
+		$objTemplate->getSchemaOrgData = static function () use ($objTemplate, $objArticle): array
+		{
 			$jsonLd = News::getSchemaOrgData($objArticle);
 
 			if ($objTemplate->addImage && $objTemplate->figure)
@@ -219,5 +208,5 @@ class ModuleInspirationNews extends \ModuleNews
 
 		return $objTemplate->parse();
 	}
-  
+    
 }
