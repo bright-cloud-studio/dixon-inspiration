@@ -8,7 +8,7 @@
  * @see	       https://github.com/bright-cloud-studio/dixon-inspiration
  */
 
-namespace Bcs\ChartBundle;
+namespace Bcs\DixonBundle;
 
 use Contao\ContentTable;
 
