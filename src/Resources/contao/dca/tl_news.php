@@ -15,8 +15,8 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['newsType'] = array
     'inputType'                => 'select',
     'options'                  => array('step' => 'Step-by-Step', 'activity' => 'Activity', 'article' => 'Article'),
     'eval'                     => array('submitOnChange'=>true, 'mandatory'=>true, 'tl_class'=>'w50'),
-    'default'                   => '',
-    'sql'                       => "text default ''"
+    'default'                   => 'step',
+    'sql'                       => "text default 'step'"
 );
 
 
