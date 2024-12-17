@@ -1,8 +1,0 @@
-table.multicolumnwizard {
-  max-width: 100%;
-}
-
-.tl_modulewizard td.mcwUpdateFields input:last-of-type {
-    margin-bottom: 60px;
-    padding-bottom: 60px;
-}
