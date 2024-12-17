@@ -3,9 +3,9 @@
 /**
  * @copyright  Bright Cliud Studio
  * @author     Bright Cloud Studio
- * @package    Contao CE Chart
+ * @package    Dixon Inspiration
  * @license    LGPL-3.0+
- * @see	       https://github.com/bright-cloud-studio/contao-ce-chart
+ * @see	       https://github.com/bright-cloud-studio/dixon-inspiration
  */
 
 namespace Bcs\ChartBundle;
@@ -45,4 +45,4 @@ class ContentActivity extends ContentTable
   
 }
 
-class_alias(ContentLineChart::class, 'ContentLineChart');
+class_alias(ContentActivity::class, 'ContentActivity');
