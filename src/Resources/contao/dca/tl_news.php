@@ -1,7 +1,7 @@
 <?php
 
  /* Extend the tl_news palettes */
-$GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{enclosure_legend:hide}', ';{type_legend},newsType;{enclosure_legend:hide}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{title_legend}', ';{type_legend},newsType;{title_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'] = array('source', 'addImage', 'addEnclosure', 'overwriteMeta', 'newsType');
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'singleSRCMainImage';
