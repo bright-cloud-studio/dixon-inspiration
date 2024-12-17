@@ -10,3 +10,8 @@
 
 /* Front End modules */
 //$GLOBALS['FE_MOD']['gai']['mod_receive_data'] = 'Bcs\Module\ModReceiveData';
+
+array_insert($GLOBALS['TL_CTE']['datasets'], 10, array
+(
+    'activity' => 'Bcs\DixonBundle\ContentActivity'
+));
