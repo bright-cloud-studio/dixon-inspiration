@@ -3,12 +3,14 @@
     "description":"Customizes Contao by adding Inspiration support for Dixon.",
     "homepage": "http://brightcloudstudio.com/",
     "keywords":["dixon", "inspiration", "bright", "cloud", "studio"],
-    "type":"contao-module",
+    "type": "contao-bundle",
     "license":"LGPL-3.0-or-later",
     "authors":[
         {
-            "name":"Bright Cloud Studio",
-            "homepage":"https://brightcloudstudio.com"
+            "name": "Bright Cloud Studio",
+            "homepage": "https://brightcloudstudio.com",
+            "email": "mark@brightcloudstudio.com",
+            "role": "Developer"
         }
     ],
     "support":{
@@ -16,27 +18,24 @@
         "source": "https://github.com/bright-cloud-studio/dixon-inspiration"
     },
     "require":{
-        "php": "^8.0",
-        "contao/core-bundle": "^4.13",
-        "contao/core-bundle": "^4.13",
-        "menatwork/contao-multicolumnwizard-bundle": "^3.6.4"
+        "php": "^7.4 || ^8.0",
+        "contao/core-bundle": "4.13 - 5.3"
     },
-    "require-dev": {
-        "contao/manager-plugin": "^2.0"
+     "extra":{
+        "contao-manager-plugin": "Bcs\\DixonBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
-            "Bcs\\": [
-                "system/modules/dixon_inspiration/library/Bcs"
-            ]
-        }
-    },
-    "extra": {
-        "contao": {
-            "sources": {
-                "system/modules/dixon_inspiration": "system/modules/dixon_inspiration"
-            }
-        }
-    },
-    "minimum-stability": "dev"
+            "Bcs\\DixonBundle\\": "src"
+        },
+        "classmap": [
+            "src/Resources/contao"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    }
 }
