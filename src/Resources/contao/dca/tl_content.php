@@ -28,13 +28,13 @@ $arrFields = array(
         'inputType' => 'multiColumnWizard',
         'eval'      => [
             'columnFields' => [
-                'step_text' => [
-                    'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_text'],
-                    'exclude'   => true,
-                    'inputType' => 'text',
-                ],
                 'step_picture' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_picture'],
+                    'inputType' => 'fileTree',
+	                'eval'      => array('filesOnly'=>true, 'extensions'=>Config::get('validImageTypes'), 'fieldType'=>'radio', 'tl_class'=>'clr w50'),
+                ],
+                'step_text' => [
+                    'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_text'],
                     'exclude'   => true,
                     'inputType' => 'text',
                 ],
