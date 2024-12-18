@@ -30,7 +30,7 @@ $arrFields = array(
                 'step_picture' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_picture'],
                     'inputType' => 'fileTree',
-	                'eval'      => array('filesOnly'=>true, 'extensions'=>Config::get('validImageTypes'), 'fieldType'=>'radio'),
+	                'eval'      => array('style'=>'width: 265px;', filesOnly'=>true, 'extensions'=>Config::get('validImageTypes'), 'fieldType'=>'radio'),
                 ],
                 'step_text' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_text'],
