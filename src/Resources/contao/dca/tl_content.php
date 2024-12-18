@@ -19,7 +19,6 @@ $arrFields = array(
     'activity_text'             => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_text'],
         'inputType'                => 'text',
-		'eval'                     => array('tl_class'=>'w75'),
 		'sql'                      => "mediumtext NULL"
     ),
     'step'       => array(
