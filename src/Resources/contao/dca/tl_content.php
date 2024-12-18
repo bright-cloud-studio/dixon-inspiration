@@ -35,8 +35,8 @@ $arrFields = arraygithub
                 ],
                 'step_picture' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_picture'],
-                    'inputType'        => 'fileTree',
-	                'eval'             => array('filesOnly'=>true, 'extensions'=>Config::get('validImageTypes'), 'fieldType'=>'radio', 'tl_class'=>'clr w50'),
+                    'exclude'   => true,
+                    'inputType' => 'text',
                 ],
             ],
         ],
