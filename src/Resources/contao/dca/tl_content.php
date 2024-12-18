@@ -15,7 +15,7 @@ $dc = &$GLOBALS['TL_DCA']['tl_content'];
 $GLOBALS['TL_DCA']['tl_content']['palettes']['activity'] = '{type_legend},type,headline;{activity_legend},activity_text;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['step'] = '{type_legend},type,headline;{step_legend},step;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 
-$arrFields = arraygithub
+$arrFields = array(
     'activity_text'             => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_text'],
         'inputType'                => 'text',
