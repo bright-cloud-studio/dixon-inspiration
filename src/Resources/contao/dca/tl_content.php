@@ -8,12 +8,14 @@
  * @see	       https://github.com/bright-cloud-studio/contao-ce-chart
  */
 
+use Contao\Config;
+
 // Get our default 'tl_content' DCA
 $dc = &$GLOBALS['TL_DCA']['tl_content'];
 $GLOBALS['TL_DCA']['tl_content']['palettes']['activity'] = '{type_legend},type,headline;{activity_legend},activity_text;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['step'] = '{type_legend},type,headline;{step_legend},step;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 
-$arrFields = array(
+$arrFields = arraygithub
     'activity_text'             => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_text'],
         'inputType'                => 'text',
@@ -33,8 +35,8 @@ $arrFields = array(
                 ],
                 'step_picture' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_picture'],
-                    'exclude'   => true,
-                    'inputType' => 'text',
+                    'inputType'        => 'fileTree',
+	                'eval'             => array('filesOnly'=>true, 'extensions'=>Config::get('validImageTypes'), 'fieldType'=>'radio', 'tl_class'=>'clr w50'),
                 ],
             ],
         ],
