@@ -12,7 +12,7 @@ use Contao\Config;
 
 // Get our default 'tl_content' DCA
 $dc = &$GLOBALS['TL_DCA']['tl_content'];
-$GLOBALS['TL_DCA']['tl_content']['palettes']['activity'] = '{type_legend},type,headline;{activity_legend},activity_text;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['activity'] = '{type_legend},type,headline;{activity_legend},activity_text, activity_picture, activity_download;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['step'] = '{type_legend},type,headline;{step_legend},step;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 
 $arrFields = array(
@@ -20,6 +20,19 @@ $arrFields = array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_text'],
         'inputType'                => 'text',
 		'sql'                      => "mediumtext NULL"
+    ),
+    'activity_picture'             => array(
+        'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_picture'],
+        'inputType' => 'fileTree',
+        'eval'      => [
+            'filesOnly'=>true,
+            'extensions'=>Config::get('validImageTypes'),
+            'fieldType'=>'radio'
+        ],
+    ),
+    'activity_download'          => array(
+        'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_download'],
+        'inputType'                => 'fileTree',
     ),
     'step'       => array(
         'label'     => &$GLOBALS['TL_LANG']['tl_content']['activity'],
