@@ -42,8 +42,10 @@ $arrFields = array(
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_text'],
                     'exclude'   => true,
                     'inputType' => 'text',
-                    'style'  => 'width: 100px',
-                    'class'  => 'step_text'
+                    'eval'      => [
+                        'style'  => 'width: 150px',
+                        'class'  => 'step_text'
+                    ],
                 ],
             ],
         ],
