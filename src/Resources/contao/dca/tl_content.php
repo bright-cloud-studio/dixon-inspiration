@@ -33,17 +33,13 @@ $arrFields = array(
 	                'eval'      => [
                         'filesOnly'=>true,
                         'extensions'=>Config::get('validImageTypes'),
-                        'fieldType'=>'radio',
-                        'class'  => 'w25'
+                        'fieldType'=>'radio'
                     ],
                 ],
                 'step_text' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_text'],
                     'exclude'   => true,
                     'inputType' => 'text',
-                    'eval'      => [
-                        'class'  => 'w75'
-                    ],
                 ],
             ],
         ],
