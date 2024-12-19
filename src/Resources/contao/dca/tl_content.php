@@ -29,10 +29,12 @@ $arrFields = array(
             'extensions'=>Config::get('validImageTypes'),
             'fieldType'=>'radio'
         ],
+        'sql'					   => "binary(16) NULL"
     ),
     'activity_download'          => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_download'],
         'inputType'                => 'fileTree',
+        'sql'					   => "binary(16) NULL",
     ),
     'step'       => array(
         'label'     => &$GLOBALS['TL_LANG']['tl_content']['activity'],
