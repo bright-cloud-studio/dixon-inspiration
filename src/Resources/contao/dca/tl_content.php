@@ -34,6 +34,11 @@ $arrFields = array(
     'activity_download'          => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_download'],
         'inputType'                => 'fileTree',
+        'eval'      => [
+            'filesOnly'=>true,
+            'extensions'=> 'pdf',
+            'fieldType'=>'radio'
+        ],
         'sql'					   => "binary(16) NULL",
     ),
     'step'       => array(
