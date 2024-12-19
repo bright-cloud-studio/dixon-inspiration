@@ -35,6 +35,7 @@ $arrFields = array(
                         'extensions'=>Config::get('validImageTypes'),
                         'fieldType'=>'radio',
                         'style'  => 'width: 150px',
+                        'class'  => 'step_picture'
                     ],
                 ],
                 'step_text' => [
@@ -42,6 +43,7 @@ $arrFields = array(
                     'exclude'   => true,
                     'inputType' => 'text',
                     'style'  => 'width: 100px',
+                    'class'  => 'step_text'
                 ],
             ],
         ],
