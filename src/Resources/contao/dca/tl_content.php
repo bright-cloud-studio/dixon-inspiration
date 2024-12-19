@@ -34,8 +34,7 @@ $arrFields = array(
                         'filesOnly'=>true,
                         'extensions'=>Config::get('validImageTypes'),
                         'fieldType'=>'radio',
-                        'style'  => 'width: 150px',
-                        'class'  => 'step_picture'
+                        'class'  => 'w25'
                     ],
                 ],
                 'step_text' => [
@@ -43,8 +42,7 @@ $arrFields = array(
                     'exclude'   => true,
                     'inputType' => 'text',
                     'eval'      => [
-                        'style'  => 'width: 150px',
-                        'class'  => 'step_text'
+                        'class'  => 'w75'
                     ],
                 ],
             ],
