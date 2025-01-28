@@ -18,8 +18,11 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['step'] = '{type_legend},type,headl
 $arrFields = array(
     'activity_text'             => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_text'],
-        'inputType'                => 'text',
-		'sql'                      => "mediumtext NULL"
+        'exclude'                => true,
+        'inputType'              => 'textarea',
+        'search'                 => true,
+        'eval'                   => array('style'=>'height:60px', 'rte'=>'tinyMCE', 'tl_class'=>'clr long'),
+        'sql'                    => "mediumtext NULL"
     ),
     'activity_picture'             => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_picture'],
@@ -58,8 +61,11 @@ $arrFields = array(
                 ],
                 'step_text' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_text'],
-                    'exclude'   => true,
-                    'inputType' => 'text',
+                    'exclude'                => true,
+                    'inputType'              => 'textarea',
+                    'search'                 => true,
+                    'eval'                   => array('style'=>'height:60px', 'rte'=>'tinyMCE', 'tl_class'=>'clr long'),
+                    'sql'                    => "mediumtext NULL"
                 ],
             ],
         ],
