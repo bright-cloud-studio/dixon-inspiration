@@ -3,19 +3,36 @@
 	<div class="steps_wrapper">
 	<?php foreach(unserialize($this->step) as $id => $step) { ?>
 		
-		<div class="step" id="step_<?= $id+1 ?>">
-			<h3>Step: <?= $id+1 ?></h3>
-			
-			<?php
-				$uuid = StringUtil::binToUuid($step['step_picture']);
-				$objFile = FilesModel::findByUuid($uuid);
-				if ($objFile) {
-					echo "<img src='$objFile->path'>";
-				}
+		<div class="step flex_wrapper">
+			<div class="size50">
+			  <?php
+				if ($step['step_picture']) {
+				    // Convert UUID to file model
+				    $objFile = \FilesModel::findByUuid($step['step_picture']);
+				
+				    // Check if we have a valid file model
+				    if ($objFile !== null && is_file(TL_ROOT . '/' . $objFile->path)) {
+				        ?>
+				        <figure class="step-picture center_element image_container">
+				            <img src="<?= $objFile->path ?>" alt="<?= $this->alt ? specialchars($this->alt) : '' ?>">
+				            <?php if (!empty($this->caption)): ?>
+				                <figcaption><?= $this->caption; ?></figcaption>
+				            <?php endif; ?>
+				        </figure>
+				        <?php
+				    }
+				}			
 			?>
-			
-			<p>Picture: <?= $uuid ?></p>
-			<p>Text: <?= $step['step_text'] ?></p>
+			</div>
+			<div class="size50">	
+				<?php if ($this->headline): ?>
+				<div class="activity_headline marbot30">
+			      <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+				</div>
+			    <?php endif; ?>
+			    <?= $step['step_text'] ?>
+				<!--<h3>Step: <?//= $id+1 ?></h3>-->
+			</div>
 		</div>
 		
 	<?php } ?>

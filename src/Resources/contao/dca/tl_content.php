@@ -5,7 +5,7 @@
  * @author     Bright Cloud Studio
  * @package    Contao CE Chart
  * @license    LGPL-3.0+
- * @see	       https://github.com/bright-cloud-studio/contao-ce-chart
+ * @see        https://github.com/bright-cloud-studio/contao-ce-chart
  */
 
 use Contao\Config;
@@ -32,7 +32,7 @@ $arrFields = array(
             'extensions'=>Config::get('validImageTypes'),
             'fieldType'=>'radio'
         ],
-        'sql'					   => "binary(16) NULL"
+        'sql'                      => "binary(16) NULL"
     ),
     'activity_download'          => array(
         'label'                    => &$GLOBALS['TL_LANG']['tl_content']['activity_download'],
@@ -42,7 +42,7 @@ $arrFields = array(
             'extensions'=> 'pdf',
             'fieldType'=>'radio'
         ],
-        'sql'					   => "binary(16) NULL",
+        'sql'                      => "binary(16) NULL",
     ),
     'step'       => array(
         'label'     => &$GLOBALS['TL_LANG']['tl_content']['activity'],
@@ -53,7 +53,7 @@ $arrFields = array(
                 'step_picture' => [
                     'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_picture'],
                     'inputType' => 'fileTree',
-	                'eval'      => [
+                    'eval'      => [
                         'filesOnly'=>true,
                         'extensions'=>Config::get('validImageTypes'),
                         'fieldType'=>'radio'
@@ -70,6 +70,16 @@ $arrFields = array(
             ],
         ],
         'sql'       => 'blob NULL',
+    ),
+    'step_download'          => array(
+        'label'                    => &$GLOBALS['TL_LANG']['tl_content']['step_download'],
+        'inputType'                => 'fileTree',
+        'eval'      => [
+            'filesOnly'=>true,
+            'extensions'=> 'pdf',
+            'fieldType'=>'radio'
+        ],
+        'sql'                      => "binary(16) NULL",
     ),
 
 

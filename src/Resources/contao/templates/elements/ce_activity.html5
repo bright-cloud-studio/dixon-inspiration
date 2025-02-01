@@ -1,3 +1,44 @@
 <div class="ce_activity">
-  <h2>Activity Element</h2>
+  
+  <div class="activity_wrapper flex_wrapper">
+      <?php
+      if ($this->activity_picturexx) {
+          // Convert UUID to file model
+          $objFile = \FilesModel::findByUuid($this->activity_picture);
+      
+          // Check if we have a valid file model
+          if ($objFile !== null && is_file(TL_ROOT . '/' . $objFile->path)) {
+              ?>
+              <figure class="activity-picture size100 center_element">
+                  <img src="<?= $objFile->path ?>" alt="<?= $this->alt ? specialchars($this->alt) : '' ?>">
+                  <?php if (!empty($this->caption)): ?>
+                      <figcaption><?= $this->caption; ?></figcaption>
+                  <?php endif; ?>
+              </figure>
+              <?php
+          }
+      }     
+    ?>
+
+    <?php 
+    // print_r($this);
+    
+    if ($this->headline): ?>
+    <div class="activity_headline">
+        <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+    </div>
+      <?php endif; ?>
+      <div class="activity_text size100 no-pad marbot30">
+      <?= $this->activity_text; ?>
+     </div>
+     <div class="activity_cta size100 no-pad marbot90">
+          <?php
+          $file_uuid = StringUtil::binToUuid($this->activity_download);
+          $objFile = FilesModel::findByUuid($file_uuid);
+          if ($objFile) {
+            echo "<a class='btn' href='$objFile->path' target='_blank'>Download Activity</a>";
+          }
+        ?>
+    </div>
+  </div>
 </div>
