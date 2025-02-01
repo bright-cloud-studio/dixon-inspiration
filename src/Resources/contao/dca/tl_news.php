@@ -8,18 +8,18 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'] = array('source', 'add
 // Define subpalettes for the various newsType options.
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'singleSRCMainImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
-// Blank subpalette for "article" – no extra fields are added when "article" is selected.
-$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_article'] = '';
+// Blank subpalette for "default" – no extra fields are added when "default" is selected.
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
 
 /* Fields for the 'newsType' selection */
 $GLOBALS['TL_DCA']['tl_news']['fields']['newsType'] = array
 (
     'label'     => &$GLOBALS['TL_LANG']['tl_news']['newsType'],
     'inputType' => 'select',
-    'options'   => array('step' => 'Step-by-Step', 'activity' => 'Activity', 'article' => 'Article'),
+    'options'   => array('step' => 'Step-by-Step', 'activity' => 'Activity', 'default' => 'Default'),
     'eval'      => array('submitOnChange' => true, 'mandatory' => true, 'tl_class' => 'w50'),
-    'default'   => 'article', // Set default newsType to "article"
-    'sql'       => "text default 'article'"
+    'default'   => 'default', // Set default newsType to "default"
+    'sql'       => "text default 'default'"
 );
 
 /* Define the fields for the 'step' newsType */
