@@ -26,7 +26,7 @@ $GLOBALS['TL_LANG']['tl_news']['newsType_options'] = [
  * Main image field for the "step" news type.
  * This field is referenced via tl_content, so we define it here for consistency.
  */
-$GLOBALS['TL_LANG']['tl_content']['singleSRCMainImage'] = ['Main Image', 'Please select the main image for this news item.'];
+// $GLOBALS['TL_LANG']['tl_content']['singleSRCMainImage'] = ['Main Image', 'Please select the main image for this news item.'];
 
 /**
  * Field for image size used in the "activity" news type.
