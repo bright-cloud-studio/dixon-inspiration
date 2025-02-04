@@ -8,6 +8,12 @@
  */
 
 /**
+ * Legends
+ */
+$GLOBALS['TL_LANG']['tl_news']['type_legend'] = 'News Type Settings';
+
+
+/**
  * Fields for tl_news
  */
 $GLOBALS['TL_LANG']['tl_news']['newsType'] = ['News Type', 'Select the type of news entry.'];
