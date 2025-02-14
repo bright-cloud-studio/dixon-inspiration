@@ -30,7 +30,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['news_issue'] = array
 );
 
 // Define subpalettes for the various newsType options. - removed singleSRCMainImage
-$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials';
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
 // Blank subpalette for "default" – no extra fields are added when "default" is selected.
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
@@ -71,6 +71,20 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['sizeMainImage'] = array
     'sql'              => "varchar(64) NOT NULL default ''"
 );
 
+$GLOBALS['TL_DCA']['tl_news']['fields']['stepImage'] = array
+(
+    'label'     => &$GLOBALS['TL_LANG']['MSC']['stepImage'],
+    'exclude'   => true,
+    'inputType' => 'fileTree',
+    'eval'      => array(
+        'fieldType' => 'radio',
+        'filesOnly' => true,
+        'extensions' => '%contao.image.valid_extensions%',
+        'mandatory' => false // Set to true if it's required
+    ),
+    'sql'       => "binary(16) NULL"
+);
+
 $GLOBALS['TL_DCA']['tl_news']['fields']['stepDownload'] = array
 (
     'label'     => &$GLOBALS['TL_LANG']['MSC']['stepDownload'],
@@ -89,6 +103,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['stepVideo'] = array
     'eval'      => array('style' => 'height:60px', 'rte' => 'tinyMCE', 'tl_class' => 'clr long'),
     'sql'       => "mediumtext NULL"
 );
+
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['stepDixonMaterials'] = array
 (

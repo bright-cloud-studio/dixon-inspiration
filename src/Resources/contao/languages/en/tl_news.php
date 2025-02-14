@@ -42,6 +42,7 @@ $GLOBALS['TL_LANG']['MSC']['sizeMainImage'] = ['Main Image Size', 'Choose the di
 /**
  * Fields for the "step" news type
  */
+$GLOBALS['TL_LANG']['MSC']['stepImage'] = ['Step Video', 'Select an image that will show on the top portion of this step.'];
 $GLOBALS['TL_LANG']['MSC']['stepDownload'] = ['Step Download', 'Select a PDF file for download for this step.'];
 $GLOBALS['TL_LANG']['MSC']['stepVideo'] = ['Step Video', 'Enter the video embed code or URL for this step.'];
 $GLOBALS['TL_LANG']['MSC']['stepDixonMaterials'] = ['Step Dixon Materials', 'Enter Dixon materials information for this step.'];

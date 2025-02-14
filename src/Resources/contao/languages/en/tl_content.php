@@ -16,6 +16,7 @@ $GLOBALS['TL_LANG']['tl_content']['activity_text'] = ['Activity Text', 'Enter th
 $GLOBALS['TL_LANG']['tl_content']['activity_picture'] = ['Activity Picture', 'Select an image for the activity.'];
 $GLOBALS['TL_LANG']['tl_content']['activity_download'] = ['Activity Download', 'Choose a PDF file for download with the activity.'];
 
+$GLOBALS['TL_LANG']['tl_content']['step_individual_video'] = ['Step Video', 'Enter the video embed code for this step.'];
 $GLOBALS['TL_LANG']['tl_content']['step_picture'] = ['Step Picture', 'Select an image for the step.'];
 $GLOBALS['TL_LANG']['tl_content']['step_text'] = ['Step Text', 'Enter the text for the step.'];
 
