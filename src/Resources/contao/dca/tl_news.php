@@ -3,18 +3,8 @@
 // Insert the newsType field into the palette at an appropriate spot.
 // (Make sure to use a legend marker that actually exists in tl_news's palette.)
 $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace('{title_legend}', '{type_legend},newsType;{title_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
-
 // Append 'newsType' to the existing __selector__ array rather than overwriting it.
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'newsType';
-
-
-
-//old 
-// $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace('{title_legend}', '{type_legend},newsType;{title_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
-// $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'] = array('source', 'addImage', 'addEnclosure', 'overwriteMeta', 'newsType');
-
-
-
 
  /* Extend the tl_news palettes */
 $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(';{teaser_legend}', ';{add_news_fields_legend},news_issue;{teaser_legend}', $GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
@@ -45,17 +35,6 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['newsType'] = array
     'default'   => 'default',
     'sql'       => "text default 'default'"
 );
-
-
-// /* Define the fields for the 'step' newsType */
-// $GLOBALS['TL_DCA']['tl_news']['fields']['singleSRCMainImage'] = array
-// (
-//     'label'     => &$GLOBALS['TL_LANG']['tl_content']['singleSRCMainImage'],
-//     'exclude'   => true,
-//     'inputType' => 'fileTree',
-//     'eval'      => array('fieldType' => 'radio', 'filesOnly' => true, 'extensions' => '%contao.image.valid_extensions%', 'mandatory' => true),
-//     'sql'       => "binary(16) NULL"
-// );
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['sizeMainImage'] = array
 (
