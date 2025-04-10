@@ -20,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['news_issue'] = array
 );
 
 // Define subpalettes for the various newsType options. - removed singleSRCMainImage
-$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials';
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials, objectives';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
 // Blank subpalette for "default" – no extra fields are added when "default" is selected.
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
@@ -97,6 +97,16 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['stepDixonMaterials'] = array
 $GLOBALS['TL_DCA']['tl_news']['fields']['stepOtherMaterials'] = array
 (
     'label'     => &$GLOBALS['TL_LANG']['MSC']['stepOtherMaterials'],
+    'exclude'   => true,
+    'inputType' => 'textarea',
+    'search'    => true,
+    'eval'      => array('style' => 'height:60px', 'rte' => 'tinyMCE', 'tl_class' => 'clr long'),
+    'sql'       => "mediumtext NULL"
+);
+
+$GLOBALS['TL_DCA']['tl_news']['fields']['objectives'] = array
+(
+    'label'     => &$GLOBALS['TL_LANG']['MSC']['objectives'],
     'exclude'   => true,
     'inputType' => 'textarea',
     'search'    => true,
