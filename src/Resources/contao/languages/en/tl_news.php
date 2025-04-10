@@ -42,8 +42,9 @@ $GLOBALS['TL_LANG']['MSC']['sizeMainImage'] = ['Main Image Size', 'Choose the di
 /**
  * Fields for the "step" news type
  */
-$GLOBALS['TL_LANG']['MSC']['stepImage'] = ['Step Video', 'Select an image that will show on the top portion of this step.'];
-$GLOBALS['TL_LANG']['MSC']['stepDownload'] = ['Step Download', 'Select a PDF file for download for this step.'];
-$GLOBALS['TL_LANG']['MSC']['stepVideo'] = ['Step Video', 'Enter the video embed code or URL for this step.'];
-$GLOBALS['TL_LANG']['MSC']['stepDixonMaterials'] = ['Step Dixon Materials', 'Enter Dixon materials information for this step.'];
-$GLOBALS['TL_LANG']['MSC']['stepOtherMaterials'] = ['Step Other Materials', 'Enter additional materials for this step.'];
+$GLOBALS['TL_LANG']['MSC']['stepImage'] = ['Step Project Image', 'Select an image that will show on the top portion of this step-by-step project.'];
+$GLOBALS['TL_LANG']['MSC']['stepDownload'] = ['Step Project Download', 'Select a PDF file for download for this step-by-step project.'];
+$GLOBALS['TL_LANG']['MSC']['stepVideo'] = ['Step Project Video', 'Enter the video embed code or URL for this step-by-step project.'];
+$GLOBALS['TL_LANG']['MSC']['stepDixonMaterials'] = ['Step Project Dixon Materials', 'Enter Dixon materials information for this step-by-step project.'];
+$GLOBALS['TL_LANG']['MSC']['stepOtherMaterials'] = ['Step Project Other Materials', 'Enter additional materials for this step-by-step project.'];
+$GLOBALS['TL_LANG']['MSC']['objectives'] = ['Step Project Objectives', 'Enter objectives for this step-by-step project.'];
