@@ -47,4 +47,4 @@ $GLOBALS['TL_LANG']['MSC']['stepDownload'] = ['Step Project Download', 'Select a
 $GLOBALS['TL_LANG']['MSC']['stepVideo'] = ['Step Project Video', 'Enter the video embed code or URL for this step-by-step project.'];
 $GLOBALS['TL_LANG']['MSC']['stepDixonMaterials'] = ['Step Project Dixon Materials', 'Enter Dixon materials information for this step-by-step project.'];
 $GLOBALS['TL_LANG']['MSC']['stepOtherMaterials'] = ['Step Project Other Materials', 'Enter additional materials for this step-by-step project.'];
-$GLOBALS['TL_LANG']['MSC']['objectives'] = ['Step Project Objectives', 'Enter objectives for this step-by-step project.'];
+$GLOBALS['TL_LANG']['MSC']['stepObjectives'] = ['Step Project Objectives', 'Enter objectives for this step-by-step project.'];
