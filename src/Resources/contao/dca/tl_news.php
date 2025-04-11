@@ -53,9 +53,9 @@ $GLOBALS['TL_DCA']['tl_news']['config']['onload_callback'][] = function (DataCon
         ->execute($dc->id)
         ->newsType;
 
-    if (!empty($newsType)) {
-        Input::setGet('act', 'edit');
-    }
+    //if (!empty($newsType)) {
+    //    Input::setGet('act', 'edit');
+    //}
 };
 
 // Define fields for Step type
