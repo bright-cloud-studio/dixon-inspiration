@@ -39,7 +39,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['newsType'] = array(
     ),
     'eval'      => array('submitOnChange' => true, 'mandatory' => true, 'tl_class' => 'w50'),
     'default'   => 'default',
-    'sql'       => "varchar(255) NOT NULL default ''"
+    'sql'       => "varchar(255) NULL default 'default'"
 );
 
 // Ensure newsType dropdown appears when editing old content
