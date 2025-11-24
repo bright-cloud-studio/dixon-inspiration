@@ -20,6 +20,10 @@ $GLOBALS['TL_LANG']['tl_content']['step_individual_video'] = ['Step Video', 'Ent
 $GLOBALS['TL_LANG']['tl_content']['step_picture'] = ['Step Picture', 'Select an image for the step.'];
 $GLOBALS['TL_LANG']['tl_content']['step_text'] = ['Step Text', 'Enter the text for the step.'];
 
+$GLOBALS['TL_LANG']['tl_content']['galleryImage'] = ['Gallery Image', 'Select the Image this Inspiration post will display'];
+$GLOBALS['TL_LANG']['tl_content']['galleryHeadline'] = ['Gallery Headline', 'Entered copy will display as a headline if content is filled in'];
+$GLOBALS['TL_LANG']['tl_content']['galleryTeaser'] = ['Gallery Teaser', 'Entered copy will display as a teaser if content is filled in'];
+
 /**
  * Legends
  */
