@@ -37,6 +37,9 @@ $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = function (Data
             case 'step':
                 $GLOBALS['TL_DCA']['tl_content']['fields']['type']['default'] = 'step';
                 break;
+            case 'news_gallery':
+                $GLOBALS['TL_DCA']['tl_content']['fields']['type']['default'] = 'news_gallery';
+                break;
             case 'activity':
                 $GLOBALS['TL_DCA']['tl_content']['fields']['type']['default'] = 'activity';
                 break;
