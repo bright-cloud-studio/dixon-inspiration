@@ -25,6 +25,7 @@ $GLOBALS['TL_LANG']['tl_news']['newsType'] = ['News Type', 'Select the type of n
 $GLOBALS['TL_LANG']['tl_news']['newsType_options'] = [
     'step'     => 'Step-by-Step',
     'activity' => 'Activity',
+    'news_gallery' => 'News Gallery',
     'article'  => 'Article',
 ];
 
