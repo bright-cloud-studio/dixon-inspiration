@@ -18,6 +18,8 @@ $GLOBALS['TL_LANG']['tl_news']['type_legend'] = 'News Type Settings';
  */
 $GLOBALS['TL_LANG']['tl_news']['newsType'] = ['News Type', 'Select the type of news entry.'];
 
+
+
 /**
  * Optional: Option labels for "newsType".
  * Note: Although the options are directly defined in the DCA, you may use these values in your templates.
@@ -49,3 +51,7 @@ $GLOBALS['TL_LANG']['MSC']['stepVideo'] = ['Step Project Video', 'Enter the vide
 $GLOBALS['TL_LANG']['MSC']['stepDixonMaterials'] = ['Step Project Dixon Materials', 'Enter Dixon materials information for this step-by-step project.'];
 $GLOBALS['TL_LANG']['MSC']['stepOtherMaterials'] = ['Step Project Other Materials', 'Enter additional materials for this step-by-step project.'];
 $GLOBALS['TL_LANG']['MSC']['stepObjectives'] = ['Step Project Objectives', 'Enter objectives for this step-by-step project.'];
+
+$GLOBALS['TL_LANG']['MSC']['galleryImage'] = ['Gallery Image', 'Select the Image this Inspiration post will display'];
+$GLOBALS['TL_LANG']['MSC']['galleryHeadline'] = ['Gallery Headline', 'Entered copy will display as a headline if content is filled in'];
+$GLOBALS['TL_LANG']['MSC']['galleryTeaser'] = ['Gallery Teaser', 'Entered copy will display as a teaser if content is filled in'];
