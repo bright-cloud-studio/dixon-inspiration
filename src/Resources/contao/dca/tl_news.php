@@ -24,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'newsType';
 
 // TEST - Removing default palette fields so we only have our custom ones and publish
-$GLOBALS['TL_DCA']['tl_news']['palettes']['news_gallery'] = '{publish_legend},published,start,stop';
+$GLOBALS['TL_DCA']['tl_news']['palettes']['news_gallery'] = '{type_legend},newsType;{publish_legend},published,start,stop';
 
 
 // Define subpalettes for the various newsType options
