@@ -25,7 +25,7 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'newsType';
 
 // Define subpalettes for the various newsType options
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials, stepObjectives';
-$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = 'galleryImage, galleryTitle, galleryTeaser';
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = 'galleryImage, galleryHeadline, galleryTeaser';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
 
@@ -73,6 +73,12 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['galleryImage'] = array(
         'mandatory' => false // Set to true if it's required
     ),
     'sql'       => "binary(16) NULL"
+);
+$GLOBALS['TL_DCA']['tl_news']['fields']['galleryHeadline'] = array(
+    'label'     => &$GLOBALS['TL_LANG']['MSC']['galleryHeadline'],
+    'inputType' => 'text',
+    'eval'      => array('tl_class' => 'w100'),
+    'sql'       => "text NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_news']['fields']['galleryTeaser'] = array(
     'label'     => &$GLOBALS['TL_LANG']['MSC']['galleryTeaser'],
