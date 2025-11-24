@@ -25,6 +25,7 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'newsType';
 
 // Define subpalettes for the various newsType options
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials, stepObjectives';
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = '';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
 
@@ -34,6 +35,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['newsType'] = array(
     'inputType' => 'select',
     'options'   => array(
         'step' => 'Step-by-Step',
+        'news_gallery' => 'Gallery',
         'activity' => 'Activity',
         'default' => 'Default'
     ),
