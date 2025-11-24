@@ -25,7 +25,7 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'newsType';
 
 // Define subpalettes for the various newsType options
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials, stepObjectives';
-$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = '';
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = 'galleryImage, galleryTitle, galleryTeaser';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
 
@@ -59,6 +59,34 @@ $GLOBALS['TL_DCA']['tl_news']['config']['onload_callback'][] = function (DataCon
     //    Input::setGet('act', 'edit');
     //}
 };
+
+
+// News Gallery
+$GLOBALS['TL_DCA']['tl_news']['fields']['galleryImage'] = array(
+    'label'     => &$GLOBALS['TL_LANG']['MSC']['galleryImage'],
+    'exclude'   => true,
+    'inputType' => 'fileTree',
+    'eval'      => array(
+        'fieldType' => 'radio',
+        'filesOnly' => true,
+        'extensions' => '%contao.image.valid_extensions%',
+        'mandatory' => false // Set to true if it's required
+    ),
+    'sql'       => "binary(16) NULL"
+);
+$GLOBALS['TL_DCA']['tl_news']['fields']['galleryTeaser'] = array(
+    'label'     => &$GLOBALS['TL_LANG']['MSC']['galleryTeaser'],
+    'exclude'   => true,
+    'inputType' => 'textarea',
+    'search'    => true,
+    'eval'      => array('style' => 'height:60px', 'rte' => 'tinyMCE', 'tl_class' => 'clr long'),
+    'sql'       => "mediumtext NULL"
+);
+
+
+
+
+
 
 // Define fields for Step type
 $GLOBALS['TL_DCA']['tl_news']['fields']['stepImage'] = array(
