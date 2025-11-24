@@ -23,6 +23,7 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(
 // Append 'newsType' to the existing __selector__ array rather than overwriting it.
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'newsType';
 
+$GLOBALS['TL_DCA']['tl_news']['palettes']['news_gallery'] = '{publish_legend},published,start,stop',
 // Define subpalettes for the various newsType options
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials, stepObjectives';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = 'galleryImage, galleryHeadline, galleryTeaser';
