@@ -13,7 +13,8 @@
 
 array_insert($GLOBALS['TL_CTE']['inspiration'], 10, array
 (
-    'activity' => 'Bcs\DixonBundle\ContentActivity',
-    'step'     => 'Bcs\DixonBundle\ContentStep',
-    'default'  => 'Bcs\DixonBundle\ContentDefault'
+    'activity'        => 'Bcs\DixonBundle\ContentActivity',
+    'step'            => 'Bcs\DixonBundle\ContentStep',
+    'news_gallery'    => 'Bcs\DixonBundle\ContentNewsGallery',
+    'default'         => 'Bcs\DixonBundle\ContentDefault'
 ));
