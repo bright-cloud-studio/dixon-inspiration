@@ -22,6 +22,30 @@ class ContentNewsGallery extends ContentTable
 	protected $strTemplate = 'ce_news_gallery';
 
 
+
+
+
+    public function generate()
+	{
+		$request = System::getContainer()->get('request_stack')->getCurrentRequest();
+		if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request))
+		{
+			$objTemplate = new BackendTemplate('be_wildcard');
+			$objTemplate->wildcard = '### ' . $GLOBALS['TL_LANG']['FMD']['faqpage'][0] . ' ###';
+			$objTemplate->title = $this->headline;
+			$objTemplate->id = $this->id;
+			$objTemplate->link = $this->name;
+			$objTemplate->href = StringUtil::specialcharsUrl(System::getContainer()->get('router')->generate('contao_backend', array('do'=>'themes', 'table'=>'tl_module', 'act'=>'edit', 'id'=>$this->id)));
+            $objTemplate->bing_bong = "noise!";
+            
+            
+			return $objTemplate->parse();
+		}
+	}
+
+
+    
+
 	/**
 	 * Generate the content element
 	 */
