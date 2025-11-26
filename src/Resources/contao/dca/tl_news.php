@@ -24,12 +24,12 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace(
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'newsType';
 
 // TEST - Removing default palette fields so we only have our custom ones and publish
-$GLOBALS['TL_DCA']['tl_news']['palettes']['news_gallery'] = '{type_legend},newsType;{publish_legend},published,start,stop';
+$GLOBALS['TL_DCA']['tl_news']['palettes']['news_gallery'] = '{type_legend},newsType;{date_legend},date,time;{publish_legend},published,start,stop';
 
 
 // Define subpalettes for the various newsType options
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials, stepObjectives';
-$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = 'galleryImage, galleryHeadline, galleryTeaser';
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = '{gallery_legend},galleryImage, galleryHeadline, galleryTeaser;';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
 
