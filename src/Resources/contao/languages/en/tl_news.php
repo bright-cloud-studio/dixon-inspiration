@@ -55,3 +55,5 @@ $GLOBALS['TL_LANG']['MSC']['stepObjectives'] = ['Step Project Objectives', 'Ente
 $GLOBALS['TL_LANG']['MSC']['galleryImage'] = ['Gallery Image', 'Select the Image this Inspiration post will display'];
 $GLOBALS['TL_LANG']['MSC']['galleryHeadline'] = ['Gallery Headline', 'Entered copy will display as a headline if content is filled in'];
 $GLOBALS['TL_LANG']['MSC']['galleryTeaser'] = ['Gallery Teaser', 'Entered copy will display as a teaser if content is filled in'];
+
+$GLOBALS['TL_LANG']['tl_news']['gallery_legend'] = 'News Gallery Details';
