@@ -166,10 +166,6 @@ class tl_news_inspiration extends tl_news
 {
     public function listNewsArticles($arrRow)
     {
-        if($arrRow['newsType'] == 'news_gallery') {
-            return '<div class="tl_content_left">' . $arrRow['galleryHeadline'] . ' <span style="color:#b3b3b3;padding-left:3px">[' . Date::parse(Config::get('datimFormat'), $arrRow['date']) . ']</span></div>';
-        } else {
-            return '<div class="tl_content_left">' . $arrRow['headline'] . ' <span style="color:#b3b3b3;padding-left:3px">[' . Date::parse(Config::get('datimFormat'), $arrRow['date']) . ']</span></div>';
-        }
+        return '<div class="tl_content_left">' . $arrRow['headline'] . ' <span style="color:#b3b3b3;padding-left:3px">[' . Date::parse(Config::get('datimFormat'), $arrRow['date']) . ']</span></div>';
     }
 }
