@@ -16,7 +16,7 @@ use Contao\Database;
 $dc = &$GLOBALS['TL_DCA']['tl_content'];
 
 // Update palettes: remove the multiColumnWizard field "step" and add our separate fields instead.
-$GLOBALS['TL_DCA']['tl_content']['palettes']['activity'] = '{type_legend},type,headline;{activity_legend},activity_text,activity_picture,activity_download,activity_download_button_copy;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['activity'] = '{type_legend},type,headline;{activity_legend},activity_text,activity_picture,activity_download;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['step'] = '{type_legend},type,headline;{step_legend},step_picture,step_individual_video,step_text;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['news_gallery'] = '{type_legend},type,headline;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['default'] = '';
@@ -89,18 +89,6 @@ $arrFields = array(
         ),
         'sql'       => "binary(16) NULL",
     ),
-    'activity_download_button_copy' => array(
-        'label'     => &$GLOBALS['TL_LANG']['tl_content']['activity_download_button_copy'],
-        'inputType' => 'text',
-        'default'   => 'Download Activity',
-        'eval'      => array(
-            'mandatory' => true,
-            'maxlength' => 255,
-            'tl_class' => 'clr w50'
-        ),
-        'sql'       => "varchar(255) NOT NULL default 'Download Activity'",
-    ),
-    
     'step_picture' => array(
         'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_picture'],
         'exclude'   => true,
