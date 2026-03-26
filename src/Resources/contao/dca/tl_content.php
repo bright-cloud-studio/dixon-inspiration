@@ -96,7 +96,7 @@ $arrFields = array(
         'eval'      => array(
             'mandatory' => true,
             'maxlength' => 255,
-            'tl_class' => 'w50'
+            'tl_class' => 'clr w50'
         ),
         'sql'       => "varchar(255) NOT NULL default 'Download Activity'",
     ),
