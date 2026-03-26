@@ -47,6 +47,7 @@ $GLOBALS['TL_LANG']['MSC']['sizeMainImage'] = ['Main Image Size', 'Choose the di
  */
 $GLOBALS['TL_LANG']['MSC']['stepImage'] = ['Step Project Image', 'Select an image that will show on the top portion of this step-by-step project.'];
 $GLOBALS['TL_LANG']['MSC']['stepDownload'] = ['Step Project Download', 'Select a PDF file for download for this step-by-step project.'];
+$GLOBALS['TL_LANG']['MSC']['stepDownloadButtonCopy'] = ['Download Button Copy', 'Enter the label for the download button for this Step Project Download.'];
 $GLOBALS['TL_LANG']['MSC']['stepVideo'] = ['Step Project Video', 'Enter the video embed code or URL for this step-by-step project.'];
 $GLOBALS['TL_LANG']['MSC']['stepDixonMaterials'] = ['Step Project Dixon Materials', 'Enter Dixon materials information for this step-by-step project.'];
 $GLOBALS['TL_LANG']['MSC']['stepOtherMaterials'] = ['Step Project Other Materials', 'Enter additional materials for this step-by-step project.'];
