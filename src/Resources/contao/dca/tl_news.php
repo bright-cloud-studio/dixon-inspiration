@@ -28,7 +28,7 @@ $GLOBALS['TL_DCA']['tl_news']['palettes']['news_gallery'] = '{type_legend},newsT
 
 
 // Define subpalettes for the various newsType options
-$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepVideo, stepDixonMaterials, stepOtherMaterials, stepObjectives';
+$GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_step'] = 'stepImage, stepDownload, stepDownloadButtonCopy, stepVideo, stepDixonMaterials, stepOtherMaterials, stepObjectives';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_news_gallery'] = '{gallery_legend},galleryImage, headline;';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_activity'] = 'sizeMainImage';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['newsType_default'] = '';
@@ -102,6 +102,19 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['stepDownload'] = array(
     'eval'      => array('fieldType' => 'radio', 'filesOnly' => true, 'extensions' => 'pdf'),
     'sql'       => "binary(16) NULL"
 );
+
+$GLOBALS['TL_DCA']['tl_news']['fields']['stepDownloadButtonCopy'] = array(
+    'label'     => &$GLOBALS['TL_LANG']['MSC']['stepDownloadButtonCopy'],
+    'inputType' => 'text',
+    'default'   => 'Download Activity',
+    'eval'      => array(
+        'mandatory' => true,
+        'maxlength' => 255,
+        'tl_class' => 'clr w50'
+    ),
+    'sql'       => "varchar(255) NOT NULL default 'Download Activity'"
+);
+
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['stepVideo'] = array(
     'label'     => &$GLOBALS['TL_LANG']['MSC']['stepVideo'],
