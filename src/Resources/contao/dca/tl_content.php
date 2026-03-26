@@ -89,6 +89,18 @@ $arrFields = array(
         ),
         'sql'       => "binary(16) NULL",
     ),
+    'activity_download_button_copy' => array(
+        'label'     => &$GLOBALS['TL_LANG']['tl_content']['activity_download_button_copy'],
+        'inputType' => 'text',
+        'default'   => 'Download Activity',
+        'eval'      => array(
+            'mandatory' => true,
+            'maxlength' => 255,
+            'tl_class' => 'w50'
+        ),
+        'sql'       => "varchar(255) NOT NULL default 'Download Activity'",
+    ),
+    
     'step_picture' => array(
         'label'     => &$GLOBALS['TL_LANG']['tl_content']['step_picture'],
         'exclude'   => true,
